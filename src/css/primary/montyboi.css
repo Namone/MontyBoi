@@ -1,0 +1,52 @@
+html, body {
+    display: block;
+    position: relative;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+}
+
+.header {
+    width: 100%;
+    text-align: center;
+    background-color: #92BFB1;
+    color: white;
+    letter-spacing: 2px;
+    font-size: 24px;
+    font-family: 'Sue Ellen Francisco', cursive;
+}
+
+.wrapper {
+    width: 100%;
+    margin: 15px auto;
+}
+
+.status,
+.actions {
+    width: 50%;
+    text-align: center;
+    border: 1px solid #DAD6D6;
+    border-radius: 3px;
+    margin-top: 15px;
+    font-family: 'Lato', sans-serif;
+}
+
+button {
+    background-color: #A61C3C;
+    border-radius: 4px;
+    padding: 8px 6px;
+    color: white;
+    border: none;
+}
+
+select {
+    padding: 6px 4px;
+}
+
+strong {
+    font-weight: bold;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <title>MontyBoi | Dashboard</title>
+</head>
+<body>
+    <div class="container header">
+        <h3 class="header-text">MontyBoi</h3>
+    </div>
+    <div class="container status">
+        <div class="wrapper">
+            <h5>Location: <strong>{{.Location}}</strong></h5>
+            <h5>Status: <strong>{{.Status}}</strong></h5>
+        </div>
+    </div>
+    <div class="container actions">
+        <div class="wrapper">
+            <h4>Update Location:</h4>
+            <button onClick="updateLocation('upstairs')">
+                Monty is Upstairs
+            </button>
+            <button onClick="updateLocation('downstairs')">
+                Monty is Downstairs
+            </button>
+            <h4>Update Status:</h4>
+            <select id="status-select">
+                <option value="sleeping">Sleeping</option>
+                <option value="in-kennel">In the Kennel</option>
+                <option value="outside">Outside</option>
+                <option value="eating">Eating</option>
+            </select>
+            <button onClick="updateStatus()">
+                Update Status
+            </button>
+        </div>
+    </div>
+</body>
+<footer>
+    <script src="/src/js/montyboi.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/src/css/primary/montyboi.css">
+</footer>
