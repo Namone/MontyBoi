@@ -88,6 +88,6 @@ func main() {
 		}
 	})
 
-	fmt.Print("Started running on http://127.0.0.1:7000\n")
-	log.Fatal(http.ListenAndServe("localhost:7000", nil))
+	fmt.Print("Started running on http://127.0.0.1:8888\n")
+	log.Fatal(http.ListenAndServe("monty-boi.herokuapp.com:8888", nil))
 }
