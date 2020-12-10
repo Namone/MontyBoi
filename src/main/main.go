@@ -21,8 +21,12 @@ var (
 )
 
 func main() {
+	port := os.Getenv("PORT")
+	if port == "" {
+		log.Fatal("$PORT must be set")
+	}
 	// Don't forget to omit the trailing /!
-	serverName := os.Getenv("HOST") + os.Getenv("PORT")
+	serverName := ":" + port
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		tmpl := template.Must(template.ParseFiles("index.html"))
 		data := MontyBoi{
@@ -89,7 +93,5 @@ func main() {
 		}
 	})
 
-	fmt.Print(os.Getenv("HOST") + os.Getenv("PORT") + "\n")
-
-	log.Fatal(http.ListenAndServe(os.Getenv("HOST")+os.Getenv("PORT"), nil))
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
