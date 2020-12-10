@@ -21,9 +21,8 @@ var (
 )
 
 func main() {
-	port := os.Getenv("PORT")
 	// Don't forget to omit the trailing /!
-	serverName := "host.docker.internal:" + port
+	serverName := os.Getenv("HOST") + os.Getenv("PORT")
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		tmpl := template.Must(template.ParseFiles("index.html"))
 		data := MontyBoi{
@@ -90,8 +89,7 @@ func main() {
 		}
 	})
 
-	p := os.Getenv("PORT")
-	fmt.Print("Started running on web:" + p + "\n")
+	fmt.Print(os.Getenv("HOST") + os.Getenv("PORT") + "\n")
 
-	log.Fatal(http.ListenAndServe("host.docker.internal:"+os.Getenv("PORT"), nil))
+	log.Fatal(http.ListenAndServe(os.Getenv("HOST")+os.Getenv("PORT"), nil))
 }
