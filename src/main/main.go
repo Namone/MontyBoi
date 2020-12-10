@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 )
 
 type MontyBoi struct {
@@ -20,8 +21,9 @@ var (
 )
 
 func main() {
+	port := os.Getenv("PORT")
 	// Don't forget to omit the trailing /!
-	serverName := "http://127.0.0.1:7000"
+	serverName := "http://127.0.0.1:" + port
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		tmpl := template.Must(template.ParseFiles("index.html"))
 		data := MontyBoi{
@@ -88,6 +90,8 @@ func main() {
 		}
 	})
 
-	fmt.Print("Started running on http://127.0.0.1:80\n")
-	log.Fatal(http.ListenAndServe("web:80", nil))
+	p := os.Getenv("PORT")
+	fmt.Print("Started running on http://127.0.0.1:" + p + "\n")
+
+	log.Fatal(http.ListenAndServe("http://127.0.0.1:"+p, nil))
 }
