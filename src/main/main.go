@@ -93,5 +93,5 @@ func main() {
 	p := os.Getenv("PORT")
 	fmt.Print("Started running on http://127.0.0.1:" + p + "\n")
 
-	log.Fatal(http.ListenAndServe("http://127.0.0.1:"+p, nil))
+	log.Fatal(http.ListenAndServe("localhost:"+os.Getenv("PORT"), nil))
 }
