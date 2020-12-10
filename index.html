@@ -16,16 +16,20 @@
         <div class="wrapper">
             <h4>Update Location:</h4>
             <button onClick="updateLocation('upstairs')">
-                Monty is Upstairs
+                Monty is upstairs
             </button>
             <button onClick="updateLocation('downstairs')">
-                Monty is Downstairs
+                Monty is downstairs
+            </button>
+            <button onClick="updateLocation('downstairs')">
+                Monty is on a walk
             </button>
             <h4>Update Status:</h4>
             <select id="status-select">
                 <option value="sleeping">Sleeping</option>
                 <option value="in-kennel">In the Kennel</option>
                 <option value="outside">Outside</option>
+                <option value="inside">Inside</option>
                 <option value="eating">Eating</option>
             </select>
             <button onClick="updateStatus()">
