@@ -5,6 +5,5 @@ build:
       - go
     docker:
         web: Dockerfile
-  
-  run:
+run:
     web: /app/bin/main
